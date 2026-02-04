@@ -11,8 +11,8 @@ class Window:
     def mainloop(self):
         self.__root.mainloop()
 
-    def draw_line(self, line: Line):
-        line.draw(self.__canvas)
+    def draw_line(self, line: Line, width: int = 2, color: str = "black"):
+        line.draw(self.__canvas, width=width, color=color)
 
 class Point:
     def __init__(self, x: int, y: int):
@@ -24,5 +24,5 @@ class Line:
         self.p0 = p0
         self.p1 = p1
     
-    def draw(self, canvas: Canvas):
-        canvas.create_line(self.p0.x, self.p0.y, self.p1.x, self.p1.y, width=2)
+    def draw(self, canvas: Canvas, width: int = 2, color: str = "black"):
+        canvas.create_line(self.p0.x, self.p0.y, self.p1.x, self.p1.y, width=width, fill=color)
