@@ -1,30 +1,22 @@
 
-from graphics import *
-
-class Cell:
-    def __init__(self, window: Window, p0: Point, size: int):
-        self.window = window
-        self.p0 = p0
-        self.p1 = Point(p0.x + size, p0.y)
-        self.p2 = Point(p0.x + size, p0.y + size)
-        self.p3 = Point(p0.x, p0.y + size)
-    
-    def draw(self):
-        line = Line(self.p0, self.p1)
-        self.window.draw_line(line)
-        line = Line(self.p1, self.p2)
-        self.window.draw_line(line)
-        line = Line(self.p2, self.p3)
-        self.window.draw_line(line)
-        line = Line(self.p3, self.p0)
-        self.window.draw_line(line)
+from graphics import Window
+from maze import Maze
 
 def main():
     
-    window = Window(800, 600)
+    COLUMNS = 6
+    ROWS = 6
+    CELL_SIZE = 50
+    MARGIN = 50
 
-    cell = Cell(window, Point(50, 50), 50)
-    cell.draw()
+    width = 2 * MARGIN + COLUMNS * CELL_SIZE
+    height = 2 * MARGIN + ROWS * CELL_SIZE
+
+    window = Window(width , height)
+
+    maze = Maze(window, COLUMNS, ROWS, CELL_SIZE, MARGIN)
+    maze.generate_maze()
+    maze.draw()
 
     window.mainloop()
 
