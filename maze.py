@@ -1,6 +1,6 @@
 
 import random
-from graphics import Window
+from graphics import *
 
 class Maze:
     def __init__(self, window: Window, columns: int, rows: int, cell_size: int, margin: int):
