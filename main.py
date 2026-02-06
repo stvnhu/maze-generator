@@ -4,8 +4,9 @@ from maze import Maze
 
 def main():
     
-    COLUMNS = 6
-    ROWS = 6
+    # must be bigger than 1x1
+    COLUMNS = 10
+    ROWS = 10
     CELL_SIZE = 50
     MARGIN = 50
 
