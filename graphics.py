@@ -19,7 +19,7 @@ class Window:
     def make_line(self, line: Line, width: int = 2, color: str = "black"):
         return self.__canvas.create_line(line.p0.x, line.p0.y, line.p0.x, line.p0.y, width=width, fill=color)
 
-    def draw_line(self, line: Line, remaining_line_count: list, steps: int = 100, animation_delay: int = 1):
+    def draw_line(self, line: Line, remaining_line_count: list, steps: int = 100, animation_delay: int = 2):
         dx = (line.p1.x - line.p0.x) / steps
         dy = (line.p1.y - line.p0.y) / steps
 

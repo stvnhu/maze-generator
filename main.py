@@ -5,8 +5,8 @@ from maze import Maze
 def main():
     
     # must be bigger than 1x1
-    COLUMNS = 10
-    ROWS = 10
+    COLUMNS = 15
+    ROWS = 15
     CELL_SIZE = 50
     MARGIN = 50
 
