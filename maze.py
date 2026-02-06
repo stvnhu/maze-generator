@@ -49,8 +49,8 @@ class Maze:
 
     def generate_maze(self):
         # randomise entry and exit.
-        def get_random_wall():
-            side = random.randrange(0, 4)
+        def get_random_wall(choices: list[int] = [0, 1, 2, 3]):
+            side = random.choice(choices)
             match side:
                 case 0:
                     cell = self.__cells[0][random.randrange(0, self.__columns)]
@@ -63,7 +63,7 @@ class Maze:
             return cell, side
         
         start_cell, start_side = get_random_wall()
-        end_cell, end_side = get_random_wall()
+        end_cell, end_side = get_random_wall([(start_side + 2) % 4])
         
         while start_cell == end_cell:
             end_cell, end_side = get_random_wall()
